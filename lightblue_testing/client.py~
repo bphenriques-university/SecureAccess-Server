@@ -25,7 +25,7 @@ try:
 	print("trying to connect to:")
 	print("Address: %s" % hostaddr)
 	print("Port: %s" % serviceport)
-	a = s.connect((hostaddr, 3))
+	a = s.connect((hostaddr, serviceport))
 	print(a)	
 	print(s)
 	s.send("Hello world!")

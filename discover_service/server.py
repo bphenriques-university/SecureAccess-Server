@@ -7,7 +7,6 @@ SERVICE_NAME = "SIRS"
 
 
 server_sock=BluetoothSocket( RFCOMM )
-server_sock.setblocking(0)
 server_sock.bind(("",PORT_ANY))
 server_sock.listen(1)
 
