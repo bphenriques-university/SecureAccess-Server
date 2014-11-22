@@ -17,21 +17,24 @@ advertise_service( server_sock, SERVICE_NAME,
                    service_classes = [ UUID, SERIAL_PORT_CLASS ],
                    profiles = [ SERIAL_PORT_PROFILE ])
           
-print "Waiting for connection on RFCOMM channel %d" % port
 
-client_sock, client_info = server_sock.accept()
-print "Accepted connection from ", client_info
+while True: 
+	print "Waiting for connection on RFCOMM channel %d" % port
+	client_sock, client_info = server_sock.accept()
+	print "Accepted connection from ", client_info
 
-try:
-    while True:
-        data = client_sock.recv(1024)
-        if len(data) == 0: break
-        print "received [%s]" % data
-except IOError:
-    pass
+	try:
+	    while True:
+			print "Waiting for new messages..."
+			data = client_sock.recv(1024)
+			if len(data) != 0: 
+				print "received [%s]" % data
+			client_sock.send("Pong")
+	except IOError:
+	    pass
 
-print "disconnected"
+	print "disconnected"
+	client_sock.close()
 
-client_sock.close()
 server_sock.close()
 print "all done"
