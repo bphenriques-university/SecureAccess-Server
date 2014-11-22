@@ -5,12 +5,9 @@ import uuid
 UUID = "841eba55-800a-48eb-9e39-335265d8d23f"
 SERVICE_NAME = "SIRS"
 
-
 server_sock=BluetoothSocket( RFCOMM )
-server_sock.setblocking(0)
 server_sock.bind(("",PORT_ANY))
 server_sock.listen(1)
-
 
 port = server_sock.getsockname()[1]
 
@@ -19,7 +16,7 @@ advertise_service( server_sock, SERVICE_NAME,
                    service_id = UUID,
                    service_classes = [ UUID, SERIAL_PORT_CLASS ],
                    profiles = [ SERIAL_PORT_PROFILE ])
-                   
+          
 print "Waiting for connection on RFCOMM channel %d" % port
 
 client_sock, client_info = server_sock.accept()
