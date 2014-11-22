@@ -5,8 +5,8 @@ import lightblue
 
 # ask user to choose the device to connect to
 #hostaddr = lightblue.selectdevice()[0]        
-hostaddr = "localhost"
-
+#hostaddr = "localhost"
+hostaddr = "80:E6:50:13:E5:D5"
 
 # find the EchoService advertised by the simple_server.py example
 
@@ -25,7 +25,11 @@ try:
 	print("trying to connect to:")
 	print("Address: %s" % hostaddr)
 	print("Port: %s" % serviceport)
+<<<<<<< HEAD
 	a = s.connect((hostaddr, serviceport))
+=======
+	a = s.connect((hostaddr, 22))
+>>>>>>> 47ccda7d112bb5f822517b8ee5cdbb57fa20359d
 	print(a)	
 	print(s)
 	s.send("Hello world!")
