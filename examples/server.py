@@ -7,6 +7,9 @@ SERVICE_NAME = "SIRS"
 
 server_sock=BluetoothSocket( RFCOMM )
 server_sock.bind(("",PORT_ANY))
+
+print str(server_sock.getpeername())
+
 server_sock.listen(1)
 
 port = server_sock.getsockname()[1]
