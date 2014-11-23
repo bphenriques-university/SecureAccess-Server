@@ -1,63 +1,42 @@
+import base64
+from Crypto import Random
+from Crypto.Cipher import AES
 
-from AbstractServerState import ServerState
-from SecurityScripts.DiffieHellman import *
+from base64 import b64encode, b64decode
 
-class StartConnectionState(ServerState):
-	def __init__(self):
-		ServerState.__init__(self)
-		self.__expectedCommand = "CONN"
-		self.__base = None
-		self.__prime = None
-		self.__yDevice = None
+class AESCipher:
 
-	def parse_data(self, data):
-		# arguments are separated by '#'
-		if len(data) == 0:
-			return False
-			
-		if len(data) != 0: 
-			data_to_parse = str(data)
-			data_to_parse = data_to_parse.split("#")
-			command = data_to_parse[0]
-			if command == self.__expectedCommand and len(data_to_parse) == 4:
-				self.__base = long(data_to_parse[1])
-				self.__prime = long(data_to_parse[2])
-				self.__yDevice = long(data_to_parse[3])
-			else:
-				return False
-		
-		return True
+    def __init__(self, key, iv):
+		self.iv = iv
+		self.bs = 32
+		self.key = key #hashlib.sha256(key.encode()).digest()
 
-	def handle(self, data):
-		if self.parse_data(data):
-			print "######## Start of connection ########"
-			print "# Base: %s"  % str(self.__base)
-			print "# Prime: %s"  % str(self.__prime)
-			print "# yDevice: %s"  % str(self.__yDevice)
-		else:
-			print "Bad Start of connection"	
+    def encrypt(self, raw):
+        raw = self._pad(raw)
+        
+        print str(AES.block_size)
+        iv = self.iv #Random.new().read(AES.block_size)
+        
+        cipher = AES.new(self.key, AES.MODE_CBC, str(iv))
+        return base64.b64encode(iv + cipher.encrypt(raw))
 
+    def decrypt(self, enc):
+        enc = base64.b64decode(enc)
+        self.iv = iv #iv = enc[:AES.block_size]
+        cipher = AES.new(self.key, AES.MODE_CBC, iv)
+        return self._unpad(cipher.decrypt(enc[AES.block_size:])).decode('utf-8')
 
-		print "#"
-		server = DiffieHellman(p = self.__prime, g = self.__base)
-		print "# yServer : %s" % str(server.getPublicKey())
-		
-		server.generateKey(self.__yDevice)
-		print "# Session Key: %s"  % str(server.getKey())
-		
-		
-		
+    def _pad(self, s):
+        return s + (self.bs - len(s) % self.bs) * chr(self.bs - len(s) % self.bs)
 
+    @staticmethod
+    def _unpad(s):
+        return s[:-ord(s[len(s)-1:])]
+        
 if __name__ == "__main__":
-	a = StartConnectionState()
-	
-	P = 13232376895198612407547930718267435757728527029623408872245156039757713029036368719146452186041204237350521785240337048752071462798273003935646236777459223
-	G = 5421644057436475141609648488325705128047428394380474376834667300766108262613900542681289080713724597310673074119355136085795982097390670890367185141189796
-	YDEVICE = 1418521685869297987538209260728989332618690208764172549180019659548875135213325222765845153480650143393663206190036752034023618954752557133433561356759201
-	
-	data = "CONN#" + str(G) + "#" + str(P) + "#" + str(YDEVICE)
-	
-	a.handle(data)
-	
-	
-	
+	iv = bytearray([0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00])
+	key = "E8ffc7e56311679f12b6fc91aa77a5eb"
+	cipher = AESCipher(key, iv)
+	text = "Bruno Henriques 12345"
+	ciphered = cipher.encrypt(text)
+	print b64encode(ciphered)
