@@ -4,6 +4,9 @@
 from bluetooth import *
 from AbstractServerState import ServerState
 from SecurityScripts.DiffieHellman import *
+from thread import *
+
+NUMBER_ALLOWED_CLIENTS = 4
 
 #State machine
 class ServerApplication():
@@ -17,12 +20,6 @@ class ServerApplication():
 		#The initial state is Start
 		self._server_state = StartState()
 	
-	def getClientSocket(self):
-		return self._client_sock
-		
-	def setClientSocket(self, client_socket):
-		self._client_sock = client_socket
-		
 	def getServerSocket(self):
 		return self._client_sock
 		
@@ -59,7 +56,7 @@ class StartState(ServerState):
 		
 		s_socket.bind(("",PORT_ANY))
 		print str(s_socket.getpeername())
-		s_socket.listen(1)
+		s_socket.listen(NUMBER_ALLOWED_CLIENTS)
 		
 		port = s_socket.getsockname()[1]
 		UUID = server_instance._UUID
@@ -91,30 +88,42 @@ class IdleState(ServerState):
 		ServerState.__init__(self)
 		self.__port = port
 
+	def handleClient(self, conn, client_id):
+		print(str(client_id) + " new connection!")
+		while 1:
+			pass
+
 	def handle(self, server_instance):
 		
 		s_socket = server_instance.getServerSocket();
 		
+		client_id = 0
 		print "Waiting for connection"
-		client_sock, client_info = s_socket.accept()
+		while 1:
+			client_sock, client_info = s_socket.accept()
+			client_id = client_id + 1
+
+			print "Accepted connection from ", client_info
 		
-		server_instance.setClientSocket(client_sock)
-		print "Accepted connection from ", client_info
-		
-		#work to be done here
-		server_instance._server_state = StartConnectionState()
+
+			start_new_thread(self.handleClient, (client_sock,client_id))	
+			#server_instance._server_state = StartConnectionState(client_sock)
+			#work to be done here
+			
 		
 #
 #	Server waits for new connections
 #
 
+
 class StartConnectionState(ServerState):
-	def __init__(self):
+	def __init__(self, socket):
 		ServerState.__init__(self)
 		self.__expectedCommand = "CONN"
 		self.__base = None
 		self.__prime = None
 		self.__yDevice = None
+		self.__socket = socket
 
 	def parse_data(self, data):
 		# arguments are separated by '#'
@@ -135,8 +144,7 @@ class StartConnectionState(ServerState):
 		return True
 
 	def handle(self, server_instance):
-		s_socket = server_instance.getServerSocket();
-		c_socket = server_instance.getClientSocket();
+		c_socket = self.__socket
 		
 		print "Waiting for diffie-hellman-keys"
 		data = c_socket.recv(1024)
@@ -159,7 +167,7 @@ class StartConnectionState(ServerState):
 		c_socket.send(msg_to_send)
 		
 		#loop in this state
-		server_instance._server_state = StartConnectionState()
+		server_instance._server_state = StartConnectionState(c_socket)
 
 class PingPongState(ServerState):
 	def __init__(self):
