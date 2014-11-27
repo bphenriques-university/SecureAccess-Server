@@ -3,9 +3,9 @@
 
 import abc
 
-class ServerState():
+class AbstractSessionState():
 	__metaclass__ = abc.ABCMeta
 
 	@abc.abstractmethod
-	def handle(self, server_instance):
+	def handle(self, session_manager):
 		raise NotImplemented("Please implement handle")
