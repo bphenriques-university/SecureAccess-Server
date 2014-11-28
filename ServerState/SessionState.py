@@ -4,6 +4,10 @@
 import sys, time
 from random import *
 from AbstractSessionState import AbstractSessionState
+from CipherText import *
+
+key_francis = "1234567891234567"
+
 
 #State machine MANAGER
 class Session():
@@ -15,10 +19,17 @@ class Session():
 		self._is_interrupted = False
 		self._client_info = client_info
 		self.__APPLICATION = application
+		self.__session_key = None
 	
 	def authenticated(self):
 		self.log("SIGNED IN")
 		self.__APPLICATION.newAuthenticatedUser(self._client_id, self._client_info)
+
+	def setSessionKey(self, key):
+		self.__session_key = key
+
+	def getSessionKey(self):
+		return self.__session_key
 
 	def loggedOff(self):
 		self.log("LOGGED OFF")
@@ -77,7 +88,7 @@ class StartState(AbstractSessionState):
 		return True
 
 	def generate_session_key(self):
-		return "ab1bn32b31jknmd102ui4bnfsanocm9123"
+		return generate_key()
 
 	def handle(self, session_manager):
 		session_manager.log("Waiting for CONNECT MESSAGE")
@@ -85,7 +96,7 @@ class StartState(AbstractSessionState):
 
 
 		# RECEIVE CONNECTION REQUEST
-		data = c_socket.recv(1024)
+		data = decrypt(c_socket.recv(1024), key_francis)
 		session_manager.log("[DEVICE]: " + str(data))
 	
 		if not self.parse_connect_request(data):
@@ -94,16 +105,18 @@ class StartState(AbstractSessionState):
 		# ANSWERING CLIENT REQUEST WITH HIS CHALLENGE - 1 AND A NEW CHALLENGE FOR HIM
 
 		key = self.generate_session_key()
+		session_manager.setSessionKey(key)
 
 		challenge_client = randint(0, 2147483647)
-		response = "CONN_RESPONSE#" + key + "#" + str(self.__challenge-1) + "#" + str(challenge_client)
 
+		#temp print
+		response = encrypt("CONN_RESPONSE#" + base64.b64encode(key) + "#" + str(self.__challenge-1) + "#" + str(challenge_client), key_francis)
 		session_manager.log("[SERVER]: " + str(response))		
 		c_socket.send(response)
 
 
 		# RECEIVE CLIENT RESPONSE TO HIS CHALLENGE
-		data = int(c_socket.recv(1024))
+		data = int(decrypt(c_socket.recv(1024), key))
 		session_manager.log("[Device]: " + str(data))
 		if(data != (challenge_client - 1)):
 			raise Exception("Client failed authentication challenge, aborting session")
@@ -141,16 +154,17 @@ class EchoReplyState(AbstractSessionState):
 
 	def handle(self, session_manager):
 		#session_manager.log("EchoReplyState: Pinging client...")		
-		c_socket = session_manager.getClientSocket();
+		c_socket = session_manager.getClientSocket()
+		session_key = session_manager.getSessionKey()
 
 		#SENDING PING_REQUEST
 		challenge_ping = randint(0, 2147483647)		
-		ping_request = "PING_REQ#" + str(challenge_ping) 
+		ping_request = encrypt("PING_REQ#" + str(challenge_ping), session_key) 
 		session_manager.log("[SERVER]: " + str(ping_request))
 		c_socket.send(ping_request)
 
 		#WAITING FOR PING REPLY
-		data = c_socket.recv(1024)
+		data = decrypt(c_socket.recv(1024), session_key)
 		session_manager.log("[DEVICE]: " + str(data))
 		if not self.parse_ping_response(data):
 			raise Exception("Client failed ping response, aborting session")
