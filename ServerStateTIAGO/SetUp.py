@@ -3,7 +3,8 @@ import subprocess
 import sys, os, errno
 import base64
 from Crypto.Cipher import AES
-from CipherText import *z
+from CipherText import *
+from ServerApplication import *
 
 BEGIN_MAC = 0
 END_MAC = 17
@@ -120,7 +121,8 @@ def setup():
 # Execute Function #
 def execute():
 	printTitle("EXECUTING")
-	sys.exit(0)
+	bm = ServerApplication()
+	bm.start()
 
 # Main Function #
 def main():
