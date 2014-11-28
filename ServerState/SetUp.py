@@ -3,6 +3,7 @@ import subprocess
 import sys, os, errno
 import base64
 from Crypto.Cipher import AES
+from CipherText import *
 
 users_dir_name = "sirs_users"
 
@@ -19,27 +20,31 @@ def makedirs_p(path):
             pass
         else: raise
 
-def post_setup_menu():
-	error_string2 = ""
+def show_menu(question, options):
+	error_string4 = ""
 	while True:
-		print "Start executing?"
-		print "(1) Run Program"
+		print question
+		counter = 1
+		for option in options:
+			option_string = "(" + str(counter) + ") " + option
+			print option_string
+			counter += 1
 		print "(0) Exit"
-		print error_string2
+		print error_string4
 		
 		try:
-			response2 = int(raw_input("Enter a number: "))
+			response4 = int(raw_input("Enter a number: "))
 		except ValueError:
-			error_string2 = "Oops!  That was no valid number.  Try again..."
+			error_string4 = "Oops!  That was no valid number.  Try again..."
 			continue
 
-		if response2 == 1:
-		    execute()
-		elif response2 == 0:
+		if response4 > 0 and response4 < len(options)+1:
+		    return response4
+		elif response4 == 0:
 		    printTitle("Bye Bye")
 		    sys.exit(0)
 		else:
-			error_string2 = "Oops!  That was no valid option.  Try again..."
+			error_string4 = "Oops!  That was no valid option.  Try again..."
 			continue
 
 def choose_devices():
@@ -78,41 +83,14 @@ def choose_devices():
 			continue
 
 def generate_show_key(user_dir):
-	print "#generate key"
-	print "#show key"
+	key = generate_key()
+	print "This is the key (in base64): ", base64.b64encode(key)
 	key_file = open(user_dir + "/key", "w+")
-	key_file.write("this is the key\n")
+	key_file.write(key)
 	key_file.close()
 
-def write_allowed_sites(user_dir):
-	print "#show sites"
-	site_file = open(user_dir + "/allowed_sites", "a+")
-	print "## Current File Content ##"
-	for line in site_file:
-		print line
-
-	error_string4 = ""
-	while True:
-		print "What do you want to do?"
-		print "(1) Append To File"
-		print "(0) Exit"
-		print error_string4
-
-		try:
-			response4 = int(raw_input("Enter a number: "))
-		except ValueError:
-			error_string4 = "Oops!  That was no valid number.  Try again..."
-			continue
-
-		if response4 == 1:
-			response5 = str(raw_input("Enter a site's URL: "))
-			site_file.write(response5+ "\n")
-		elif response4 == 0:
-		    printTitle("Bye Bye")
-		    sys.exit(0)
-		else:
-			error_string4 = "Oops!  That was no valid option.  Try again..."
-			continue
+def create_allowed_sites_file(user_dir):
+	open(user_dir + "/allowed_sites", 'a').close()
 
 # Set Up Function
 def setup():
@@ -122,8 +100,9 @@ def setup():
 	user_dir = users_dir_name + "/" + device_MAC
 	makedirs_p(user_dir)
 	generate_show_key(user_dir)
-	write_allowed_sites(user_dir)
-	post_setup_menu()
+	create_allowed_sites_file(user_dir)
+	if show_menu("Start Executing?", ["Run Program"]) == 1:
+		execute()
 	sys.exit(0)
 
 # Execute Function #
