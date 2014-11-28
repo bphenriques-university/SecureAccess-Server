@@ -1,6 +1,7 @@
 #!/usr/bin/python2
 # -*- coding: UTF-8 -*-
 
+import threading
 from bluetooth import *
 from SecurityScripts.DiffieHellman import *
 from thread import *
@@ -15,8 +16,10 @@ class ServerApplication():
 	def __init__(self):
 		self._UUID = "841eba55-800a-48eb-9e39-335265d8d23f"
 		self._SERVICE_NAME = "SecureAccess"
-		self._client_sock = None
 		self._server_sock = None
+		self._current_users_logged_in = list()
+		self._list_mutex = threading.Lock()
+		self._recheck_user = True
 	
 	def getServerSocket(self):
 		return self._client_sock
@@ -24,10 +27,53 @@ class ServerApplication():
 	def setServerSocket(self, client_socket):
 		self._client_sock = client_socket
 	
-	def _handleClient(self, conn, client_id):
-		client_session = Session(client_id, conn)
+	def _handleClient(self, conn, client_id, client_info):
+		client_session = Session(self, client_id, client_info, conn)
 		client_session.start()
 	
+	def newAuthenticatedUser(self, client_id, client_info):
+		self._list_mutex.acquire()
+		print "Adding authenticated user [" + str(client_id) + "]: " + str(client_info)
+		self._current_users_logged_in.append((client_id, client_info))
+		self._recheck_user = True
+		self._list_mutex.release()		
+
+	def disconnectUser(self, client_id, client_info):
+		self._list_mutex.acquire()
+		self._current_users_logged_in.remove((client_id, client_info))
+		self._recheck_user = True
+		self._list_mutex.release()
+
+	def _web_blocker(self):
+
+		print "#################################"
+		print "##### STARTING WEB_BLOCKER   ####" 
+			
+
+		#set default blocks
+		print_once = True
+		while True:
+			self._list_mutex.acquire()
+			if not self._recheck_user:
+				self._list_mutex.release()
+				continue
+			
+			current_user = None
+			if len(self._current_users_logged_in) == 0:
+				if print_once:
+					print "No users logged in..."
+					print_once = False
+			else:	
+				print_once = True
+				current_user = self._current_users_logged_in[0]
+				print "Changing privacy to: " + str(current_user)
+		
+			self._recheck_user = False
+			self._list_mutex.release()
+					
+			
+
+
 	def _create_service(self, uuid, server_name):
 		s_socket = BluetoothSocket(RFCOMM)		
 		s_socket.bind(("",PORT_ANY))
@@ -57,6 +103,8 @@ class ServerApplication():
 			print "#"
 			print "#################################"
 			
+			start_new_thread(self._web_blocker, ())
+
 			client_id = 0
 			print "Waiting for connection"
 			while True:
@@ -64,11 +112,11 @@ class ServerApplication():
 				client_id = client_id + 1
 				
 				print("@@ Connection #" + str(client_id) + " from: " + str(client_info))
-				start_new_thread(self._handleClient, (client_sock, client_id))
+				start_new_thread(self._handleClient, (client_sock, client_id, client_info))
 		
 		except Exception as e:
 			print "[ERROR IN APPLICATION] - %s" % str(e)
-		
+
 			if client_sock is not None:
 				client_sock.close()
 			if s_socket is not None:

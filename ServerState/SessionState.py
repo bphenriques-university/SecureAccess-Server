@@ -7,13 +7,23 @@ from AbstractSessionState import AbstractSessionState
 
 #State machine MANAGER
 class Session():
-	def __init__(self, client_id, client_sock):
+	def __init__(self, application, client_id, client_info, client_sock):
 		self._client_id = client_id
 		self._client_sock = client_sock		
 		#The initial state is Start
 		self._session_state = StartState()
 		self._is_interrupted = False
+		self._client_info = client_info
+		self.__APPLICATION = application
 	
+	def authenticated(self):
+		self.log("SIGNED IN")
+		self.__APPLICATION.newAuthenticatedUser(self._client_id, self._client_info)
+
+	def loggedOff(self):
+		self.log("LOGGED OFF")
+		self.__APPLICATION.disconnectUser(self._client_id, self._client_info)
+
 	def getClientSocket(self):
 		return self._client_sock
 
@@ -36,6 +46,7 @@ class Session():
 				#raw_input("Press any key to continue...")
 		except Exception as e:
 			print "[SESSION ERROR] - %s" % str(e)
+			self.loggedOff()
 			if self._client_sock is not None:
 				self._client_sock.close()
 			return -1
@@ -96,9 +107,8 @@ class StartState(AbstractSessionState):
 		session_manager.log("[Device]: " + str(data))
 		if(data != (challenge_client - 1)):
 			raise Exception("Client failed authentication challenge, aborting session")
-			
-		session_manager.log("[LOG]: AUTHENTICATED")
 		
+		session_manager.authenticated()
 		#work to be done here
 		session_manager.setNextState(EchoReplyState())
 
