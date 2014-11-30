@@ -1,0 +1,25 @@
+install squid3
+configure firefox:
+	Preferences->Advanced->Network->Settings(Connection)->Manual proxy confiuration
+	Http Proxy 127.0.0.1 Port 3128
+	Check 'Use this proxy server for all protocols'
+	OK
+
+write in /etc/squid3/squid.conf:
+	acl sites dstdom_regex -i "/etc/squid3/deny.acl"
+	acl allowed_sites dstdom_regex -i "/etc/squid3/allow.acl"
+	http_access allow allowed_sites
+	http_access deny sites
+
+run: cp /etc/squid3/squid.conf /etc/squid3/squid.conf.backup
+
+write in /etc/squid/deny.acl sites to block:
+	facebook\.com
+
+write in /etc/squid/allow.acl (file just for test porpuses) sites allowed:
+	Same format
+
+touch /etc/squid/teste.acl
+
+run: sudo squid3 -k reconfigure
+
