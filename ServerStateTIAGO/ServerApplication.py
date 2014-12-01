@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 
 import threading
+import SetUp
 from bluetooth import *
 from SecurityScripts.DiffieHellman import *
 from thread import *
@@ -28,15 +29,25 @@ class ServerApplication():
 		self._client_sock = client_socket
 	
 	def _handleClient(self, conn, client_id, client_info):
-		client_session = Session(self, client_id, client_info, conn)
-		client_session.start()
+		device_MAC = client_info[0]
+		path_MAC = SetUp.USER_DIR_NAME + "/" + device_MAC
+		print "[TIAGO]", path_MAC
+		if os.path.isdir(path_MAC):
+			key_file = open(path_MAC + SetUp.SYM_KEY_FILE, 'r')
+			key_francis = key_file.readline()
+			print "[TIAGO]", key_francis
+			# esta key_francis esta' em base64
+			client_session = Session(self, client_id, client_info, key_francis, conn)
+			client_session.start()
+		else:
+			print "User Inexistente"
 	
 	def newAuthenticatedUser(self, client_id, client_info):
 		self._list_mutex.acquire()
 		print "Adding authenticated user [" + str(client_id) + "]: " + str(client_info)
 		self._current_users_logged_in.append((client_id, client_info))
 		self._recheck_user = True
-		self._list_mutex.release()		
+		self._list_mutex.release()
 
 	def disconnectUser(self, client_id, client_info):
 		self._list_mutex.acquire()

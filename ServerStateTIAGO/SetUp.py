@@ -85,7 +85,12 @@ def choose_devices():
 
 def generate_show_key(user_dir):
 	key = generate_key()
-	print "This is the key (in base64): ", base64.b64encode(key)
+	#print "This is the key (in base64): ", base64.b64encode(key)
+	qrcode_image = user_dir + "/qrcode.png"
+	qr_gen_command = "qrencode -s 20 -o " + qrcode_image +" '"+base64.b64encode(key)+"'"
+	ps = subprocess.Popen(qr_gen_command, shell=True)
+	qr_gen_display = "eog " + qrcode_image + " > /dev/null 2>&1"
+	ps = subprocess.Popen(qr_gen_display, shell=True, stdout=subprocess.PIPE)
 	key_file = open(user_dir + SYM_KEY_FILE, "w+")
 	key_file.write(key)
 	key_file.close()

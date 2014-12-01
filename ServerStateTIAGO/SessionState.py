@@ -6,18 +6,17 @@ from random import *
 from AbstractSessionState import AbstractSessionState
 from CipherText import *
 
-key_francis = "1234567891234567"
-
 
 #State machine MANAGER
 class Session():
-	def __init__(self, application, client_id, client_info, client_sock):
+	def __init__(self, application, client_id, client_info, kek_key, client_sock):
 		self._client_id = client_id
 		self._client_sock = client_sock		
 		#The initial state is Start
 		self._session_state = StartState()
 		self._is_interrupted = False
 		self._client_info = client_info
+		self._kek_key = kek_key
 		self.__APPLICATION = application
 		self.__session_key = None
 	
@@ -30,6 +29,9 @@ class Session():
 
 	def getSessionKey(self):
 		return self.__session_key
+
+	def getKekKey(self):
+		return self._kek_key
 
 	def loggedOff(self):
 		self.log("LOGGED OFF")
@@ -96,7 +98,7 @@ class StartState(AbstractSessionState):
 
 
 		# RECEIVE CONNECTION REQUEST
-		data = decrypt(c_socket.recv(1024), key_francis)
+		data = decrypt(c_socket.recv(1024), session_manager.getKekKey())
 		session_manager.log("[DEVICE]: " + str(data))
 	
 		if not self.parse_connect_request(data):
@@ -110,7 +112,7 @@ class StartState(AbstractSessionState):
 		challenge_client = randint(0, 2147483647)
 
 		#temp print
-		response = encrypt("CONN_RESPONSE#" + base64.b64encode(key) + "#" + str(self.__challenge-1) + "#" + str(challenge_client), key_francis)
+		response = encrypt("CONN_RESPONSE#" + base64.b64encode(key) + "#" + str(self.__challenge-1) + "#" + str(challenge_client), session_manager.getKekKey())
 		session_manager.log("[SERVER]: " + str(response))		
 		c_socket.send(response)
 
