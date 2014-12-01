@@ -1,7 +1,7 @@
 #!/usr/bin/python
 from subprocess import call
 
-def changeUsr(newUsr):
+def changeUsr(path_allowed_sites):
 
     '''
         Change the file used to view the allowed websites.
@@ -16,7 +16,7 @@ def changeUsr(newUsr):
 
     for line in lines:
         if(line.startswith('acl allowed_sites')):
-            file_w.write('acl allowed_sites dstdom_regex -i "/etc/squid3/' + newUsr + '.acl"\n')
+            file_w.write('acl allowed_sites dstdom_regex -i "/home/tiago/Documents/GitRepos/SecureAccess-Server/ServerStateTIAGO/sirs_users/'+str(path_allowed_sites)+'/allowed_sites"\n')
         else:
             file_w.write(line)
 
@@ -24,5 +24,4 @@ def changeUsr(newUsr):
     file.close()
     file_w.close()
 
-#changeUsr('teste')
-changeUsr('allow')
+changeUsr("default_user")

@@ -14,7 +14,7 @@ write in /etc/squid3/squid.conf:
 run: cp /etc/squid3/squid.conf /etc/squid3/squid.conf.backup
 
 write in /etc/squid/deny.acl sites to block:
-	facebook\.com
+	facebook\.com$
 
 write in /etc/squid/allow.acl (file just for test porpuses) sites allowed:
 	Same format

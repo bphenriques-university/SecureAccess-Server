@@ -4,12 +4,12 @@
 import threading
 import SetUp
 from bluetooth import *
-from SecurityScripts.DiffieHellman import *
 from thread import *
 from SessionState import *
-
+import SquidUpdater
 
 NUMBER_ALLOWED_CLIENTS = 4
+DEFAULT_USER = "default_user"
 
 #State machine
 class ServerApplication():
@@ -74,9 +74,11 @@ class ServerApplication():
 				if print_once:
 					print "No users logged in..."
 					print_once = False
+				SquidUpdater.changeUsr(DEFAULT_USER)
 			else:	
 				print_once = True
 				current_user = self._current_users_logged_in[0]
+				SquidUpdater.changeUsr(current_user[1][0])
 				print "Changing privacy to: " + str(current_user)
 		
 			self._recheck_user = False

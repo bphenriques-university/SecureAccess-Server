@@ -114,6 +114,8 @@ def setup():
 	device_MAC = choose_devices()
 	user_dir = USER_DIR_NAME + "/" + device_MAC
 	makedirs_p(user_dir)
+	#default_user = USER_DIR_NAME + "/default_user"
+	#makedirs_p(default_user)
 	generate_show_key(user_dir)
 	create_allowed_sites_file(user_dir)
 	show_allowed_sites_instructions(user_dir)
