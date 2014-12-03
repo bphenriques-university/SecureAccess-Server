@@ -24,12 +24,16 @@ def changeUsr(path_allowed_sites):
     squid = "squid3 -k reconfigure > /dev/null 2>&1"
     ps = subprocess.Popen(squid, shell=True, stdout=subprocess.PIPE)
     #subprocess.call(['killall', 'firefox'])
-    killall = "killall firefox > /dev/null 2>&1"
-    ps = subprocess.Popen(killall, shell=True, stdout=subprocess.PIPE)
-    #call(['firefox', '>', '/dev/null', '2>&1'])
-    firefox = "firefox > /dev/null 2>&1"
-    ps = subprocess.Popen(firefox, shell=True, stdout=subprocess.PIPE)
+    killall = "killall firefox"
+    ps = subprocess.Popen(killall, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    
+    # se o firefox estiver aberto faz restart
+    if ps.communicate()[1] == "":
+        #call(['firefox', '>', '/dev/null', '2>&1'])
+        firefox = "firefox > /dev/null 2>&1"
+        ps = subprocess.Popen(firefox, shell=True, stdout=subprocess.PIPE)
     file.close()
     file_w.close()
 
-changeUsr("default_user")
+#comentei isto porque quando se faz import deste ficheiro isto e' chamado pelos vistos e nao queremos isso
+#changeUsr("default_user")

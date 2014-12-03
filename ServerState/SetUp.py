@@ -5,6 +5,7 @@ import base64
 from Crypto.Cipher import AES
 from CipherText import *
 from ServerApplication import *
+import shutil
 
 BEGIN_MAC = 0
 END_MAC = 17
@@ -31,14 +32,31 @@ def printTitle(text):
 	print "#" * (max_string + 2)
 
 def makedirs_p(path):
-    try:
-        os.makedirs(path, 0700)
-    except OSError as exc: # Python >2.5
-        if exc.errno == errno.EEXIST and os.path.isdir(path):
-            pass
-        else: raise
+	if os.path.isdir(path):
+		question = "A set up for this device already exists. Overwrite it?"
+		options = [
+			"Yes"
+		]
+		bigTitle = "WARNING"
+		menu_response(question, options, title=bigTitle)
+		shutil.rmtree(path)
 
-def menu_response(question, options, title=None):
+	try:
+		os.makedirs(path, 0700)
+	except OSError as exc: # Python >2.5
+		if exc.errno == errno.EEXIST and os.path.isdir(path):
+			pass
+		else: raise
+
+
+def rmdir(path):
+	if os.path.isdir(path):
+		shutil.rmtree(path)
+		print "Device Removed!"
+	else:
+		print "That Device has no set up!"
+
+def menu_response(question, options, title=None, withExit=True):
 	error_string = ""
 	while True:
 		if title != None:
@@ -49,7 +67,8 @@ def menu_response(question, options, title=None):
 			option_string = "(" + str(counter) + ") " + option
 			print option_string
 			counter += 1
-		print "(0) Exit"
+		if withExit:
+			print "(0) Exit"
 		print error_string
 		
 		try:
@@ -60,7 +79,7 @@ def menu_response(question, options, title=None):
 
 		if response > 0 and response < len(options)+1:
 		    return response
-		elif response == 0:
+		elif withExit and response == 0:
 		    printTitle("BYE BYE")
 		    sys.exit(0)
 		else:
@@ -97,22 +116,25 @@ def generate_KEK(user_dir):
 	return key
 
 def show_key(key):
-	question = "Your key (in base64) is: " + base64.b64encode(key) +". Continue?"
+	question = "Your key (in base64) is: " + base64.b64encode(key) +". Continue to further instructions?"
 	options = [
-		"Yes"
+		"Yes",
+		"Go To Menu"
 	]
 	big_title =  "YOUR KEY"
 	response = menu_response(question, options, title=big_title)
+	if response == 2:
+		main()
 
 def prioridade_user(user_dir):
 	question = "Choose priority:"
 	options = [
 		"Low",
 		"Medium",
-		"High"
+		"High",
 	]
 	big_title =  "PRIORITY"
-	response = menu_response(question, options, title=big_title)
+	response = menu_response(question, options, title=big_title, withExit=False)
 	priority = None
 	priority = response
 	# 3 = HIGH, 2 = MEDIUM, 1 = LOW
@@ -131,7 +153,7 @@ def show_allowed_sites_instructions(user_dir):
 	print "# (1) go to the file", allowed_sites_file
 	print "# (2) for each line insert the allowed website"
 	print "# the website's URL must be written using this structure:"
-	print "# \thttps://www.facebook.com"
+	print "# \tfacebook\.com$"
 	print "#"
 	print "# If you wish to do this now select (0) Exit"
 
@@ -150,10 +172,20 @@ def setup():
 	create_allowed_sites_file(user_dir)
 	show_allowed_sites_instructions(user_dir)
 
-	options = ["Run Server"]
+	options = [
+		"Run Server",
+		"Go To Menu"
+		]
 	if menu_response("", options) == 1:
 		execute()
-	sys.exit(0)
+	else:
+		main()
+
+def remove_user():
+	device_MAC = choose_devices()
+	user_dir = USER_DIR_NAME + "/" + device_MAC
+	rmdir(user_dir)
+	main()
 
 # Execute Function #
 def execute():
@@ -166,6 +198,7 @@ def main():
 	question = "What do you want to do?"
 	options = [
 		"Set Up - New User",
+		"Remove User",
 		"Run Server"
 	]
 	big_title =  "SIRS PROJECT 2014 - GROUP 8 - MEIC-A"
@@ -173,6 +206,8 @@ def main():
 	
 	if response == 1:
 		setup()
+	elif response == 2:
+		remove_user()
 	else:
 	    execute()
 
