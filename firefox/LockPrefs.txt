@@ -1,0 +1,21 @@
+create a file named mozilla.cfg with the following text:
+	//
+	lockPref("network.proxy.type", 1);
+	lockPref("browser.sessionstore.resume_from_crash", false);
+	lockPref("browser.cache.disk.enable", false);
+	lockPref("network.proxy.http", "127.0.0.1");
+	lockPref("network.proxy.backup.http", "");
+	lockPref("network.proxy.http_port", 3128);
+	lockPref("network.proxy.backup.http_port", 0);
+	lockPref("network.proxy.ssl", "127.0.0.1");
+	lockPref("network.proxy.backup.ssl", "");
+	lockPref("network.proxy.ssl_port", 3128);
+	lockPref("network.proxy.backup.ssl_port", 0);
+	lockPref("browser.cache.disk.capacity", 0);
+copy file to firefox directory:
+	cp mozilla.cfg /usr/lib/firefox/
+create file in defaults/pref in firefox directory (local-settings.js):
+	pref("general.config.obscure_value", 0); // only needed if you do not want to obscure the content with ROT-13
+	pref("general.config.filename", "mozilla.cfg");
+restart firefox
+
