@@ -16,12 +16,16 @@ def changeUsr(path_allowed_sites):
 
     for line in lines:
         if(line.startswith('acl allowed_sites')):
-            file_w.write('acl allowed_sites dstdom_regex -i "/home/tiago/Documents/GitRepos/SecureAccess-Server/ServerStateTIAGO/sirs_users/'+str(path_allowed_sites)+'/allowed_sites"\n')
+            file_w.write('acl allowed_sites dstdom_regex -i "/home/tiago/Documents/GitRepos/SecureAccess-Server/ServerState/sirs_users/'+str(path_allowed_sites)+'/allowed_sites"\n')
         else:
             file_w.write(line)
 
-    subprocess.call(['squid3', '-k', 'reconfigure'])
-    subprocess.call(['killall', 'firefox'])
+    #subprocess.call(['squid3', '-k', 'reconfigure'])
+    squid = "squid3 -k reconfigure > /dev/null 2>&1"
+    ps = subprocess.Popen(squid, shell=True, stdout=subprocess.PIPE)
+    #subprocess.call(['killall', 'firefox'])
+    killall = "killall firefox > /dev/null 2>&1"
+    ps = subprocess.Popen(killall, shell=True, stdout=subprocess.PIPE)
     #call(['firefox', '>', '/dev/null', '2>&1'])
     firefox = "firefox > /dev/null 2>&1"
     ps = subprocess.Popen(firefox, shell=True, stdout=subprocess.PIPE)

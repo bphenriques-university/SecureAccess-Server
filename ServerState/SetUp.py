@@ -86,7 +86,6 @@ def choose_devices():
 
 def generate_KEK(user_dir):
 	key = generate_key()
-	#print "This is the key (in base64): ", base64.b64encode(key)
 	qrcode_image = user_dir + "/qrcode.png"
 	qr_gen_command = "qrencode -s 20 -o " + qrcode_image +" '"+base64.b64encode(key)+"'"
 	ps = subprocess.Popen(qr_gen_command, shell=True)

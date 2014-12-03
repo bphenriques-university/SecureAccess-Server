@@ -32,15 +32,15 @@ class ServerApplication():
 	def _handleClient(self, conn, client_id, client_info):
 		device_MAC = client_info[0]
 		path_MAC = SetUp.USER_DIR_NAME + "/" + device_MAC
-		print "[TIAGO]", path_MAC
+		#print "[TIAGO]", path_MAC
 		if os.path.isdir(path_MAC):
 			key_file = open(path_MAC + SetUp.SYM_KEY_FILE, 'r')
 			key_francis = key_file.readline()
-			print "[TIAGO]", key_francis
+			#print "[TIAGO]", key_francis
 
 			priority_file = open(path_MAC + SetUp.PRIORITY_FILE, 'r')
 			priority = int(priority_file.readline())
-			print "[TIAGO]", priority
+			#print "[TIAGO]", priority
 			# esta key_francis esta' em base64
 			client_session = Session(self, client_id, client_info, key_francis, priority, conn)
 			client_session.start()
@@ -67,7 +67,8 @@ class ServerApplication():
 		print "#################################"
 		print "##### STARTING WEB_BLOCKER   ####" 
 			
-
+		#this should work
+		previous_user = (None, None, None)
 		#set default blocks
 		print_once = True
 		while True:
@@ -85,7 +86,10 @@ class ServerApplication():
 			else:	
 				print_once = True
 				current_user = self._get_next_user()
-				SquidUpdater.changeUsr(current_user[1][0])
+				#if the allowed user does not change
+				if current_user[0] == previous_user[0]:
+					SquidUpdater.changeUsr(current_user[1][0])
+				previous_user = current_user
 				print "Changing privacy to: " + str(current_user)
 		
 			self._recheck_user = False
@@ -94,11 +98,10 @@ class ServerApplication():
 	def _get_next_user(self):
 		return self._current_users_logged_in[0]
 
-
 	def _create_service(self, uuid, server_name):
 		s_socket = BluetoothSocket(RFCOMM)		
 		s_socket.bind(("",PORT_ANY))
-		print str(s_socket.getpeername())
+		#print str(s_socket.getpeername())
 		s_socket.listen(NUMBER_ALLOWED_CLIENTS)
 	
 		port = s_socket.getsockname()[1]
