@@ -16,7 +16,7 @@ def changeUsr(path_allowed_sites):
 
     for line in lines:
         if(line.startswith('acl allowed_sites')):
-            file_w.write('acl allowed_sites dstdom_regex -i "/etc/squid3/sirs_users/'+str(path_allowed_sites)+'/allowed_sites"\n')
+            file_w.write('acl allowed_sites dstdom_regex -i "/home/tiago/Documents/GitRepos/SecureAccess-Server/ServerStateTIAGO/sirs_users/'+str(path_allowed_sites)+'/allowed_sites"\n')
         else:
             file_w.write(line)
 

@@ -9,7 +9,7 @@ from CipherText import *
 
 #State machine MANAGER
 class Session():
-	def __init__(self, application, client_id, client_info, kek_key, client_sock):
+	def __init__(self, application, client_id, client_info, kek_key, priority, client_sock):
 		self._client_id = client_id
 		self._client_sock = client_sock		
 		#The initial state is Start
@@ -19,10 +19,11 @@ class Session():
 		self._kek_key = kek_key
 		self.__APPLICATION = application
 		self.__session_key = None
+		self.__priority = priority
 	
 	def authenticated(self):
 		self.log("SIGNED IN")
-		self.__APPLICATION.newAuthenticatedUser(self._client_id, self._client_info)
+		self.__APPLICATION.newAuthenticatedUser(self._client_id, self._client_info, self.__priority)
 
 	def setSessionKey(self, key):
 		self.__session_key = key
@@ -35,7 +36,7 @@ class Session():
 
 	def loggedOff(self):
 		self.log("LOGGED OFF")
-		self.__APPLICATION.disconnectUser(self._client_id, self._client_info)
+		self.__APPLICATION.disconnectUser(self._client_id, self._client_info, self.__priority)
 
 	def getClientSocket(self):
 		return self._client_sock

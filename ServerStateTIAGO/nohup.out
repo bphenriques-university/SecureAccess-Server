@@ -10,3 +10,917 @@
 (firefox:4134): GLib-GObject-WARNING **: Attempt to add property GnomeProgram::default-icon after class was initialised
 console.error: 
   Message: Unix error 13 during operation open on file /home/francisco/.mozilla/firefox/mwad0hks.default/sessionstore-backups/recovery.js (Permission denied)
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1144 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1162 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1178 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1195 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1211 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1228 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1244 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1261 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1277 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1313 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1321 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1344 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1361 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1390 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1407 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1423 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1440 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1456 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1473 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1489 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 1506 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 3629 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 6229 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 6771 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 41927 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 42639 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 48828 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 53808 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 55389 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 55959 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 59737 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 60182 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 66559 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 70668 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72179 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72423 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72517 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72653 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72670 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72686 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72703 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72719 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72736 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72752 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72769 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72785 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72802 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72818 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72835 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72851 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72868 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72884 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72901 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72917 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72934 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72950 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72967 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 72983 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 73000 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 73016 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 73033 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 73049 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 73066 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 73082 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 73099 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 73115 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 73132 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 73148 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 73165 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 73181 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 73198 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 73214 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 73231 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 77918 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 80629 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 98448 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 100001 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 103484 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 108124 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 113005 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 113467 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 114507 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 117250 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 117919 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 259682 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 260075 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 268578 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 277455 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 279010 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 282099 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 285191 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 285971 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 288291 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 293697 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 294086 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 295246 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 297569 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 302210 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 305685 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 322323 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 331602 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 336237 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 337397 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 340493 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 340881 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 342435 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 345524 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 349410 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 351734 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 353294 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 358743 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 360676 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 372995 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 421378 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 422729 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 424454 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 425453 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 505656 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 505724 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 505925 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 506065 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513235 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513242 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513264 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513281 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513297 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513314 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513330 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513347 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513363 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513380 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513396 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513413 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513429 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513446 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513462 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513479 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513495 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513512 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513528 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513545 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513561 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513578 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513594 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513611 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513627 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513644 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513660 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513677 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513693 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513710 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513726 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513743 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513759 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513776 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513792 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513809 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513825 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 513842 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 514614 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 514854 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 515738 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 516125 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 516209 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 516226 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 516366 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 517127 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 517227 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 517488 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 517745 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 517957 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 517977 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 517994 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 518010 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 518044 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 518061 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 518077 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 518094 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 518110 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 518140 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 518156 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 518173 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 518189 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 518206 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 518222 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 518239 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 518255 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 518381 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 529853 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 529860 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 529882 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 529899 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 529915 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 529932 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 529948 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 529965 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 529981 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 529998 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530014 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530031 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530047 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530064 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530080 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530097 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530113 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530130 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530146 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530163 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530179 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530196 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530212 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530229 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530245 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530262 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530278 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530295 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530311 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530328 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530344 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530361 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530377 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 530394 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 533209 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 533500 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 533605 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 533622 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 533829 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 534165 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 534781 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 535688 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 536170 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 541774 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 541819 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 541944 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 541970 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 541986 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542003 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542019 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542036 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542052 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542069 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542085 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542102 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542118 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542135 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542151 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542168 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542184 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542201 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542217 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542234 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542250 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542267 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542283 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542300 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542316 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542333 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542349 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542366 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542382 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542399 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542415 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542432 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542448 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542465 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542481 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542498 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542514 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542531 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542547 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542564 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542580 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542597 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542613 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542630 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542646 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542663 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542679 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542696 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542712 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 542729 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 543163 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545008 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545015 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545037 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545054 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545070 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545100 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545116 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545133 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545149 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545166 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545182 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545199 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545215 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545232 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545248 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545265 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545281 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545298 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545314 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545331 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545347 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545364 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545380 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545397 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545413 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545430 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545446 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545463 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545479 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545496 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545512 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545529 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545545 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545562 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545578 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545595 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545611 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545628 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545644 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545659 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545675 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545692 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545708 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545725 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545741 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545758 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545774 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545791 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545807 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545824 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545840 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545857 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545873 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545890 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545906 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545923 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545939 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545956 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545972 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 545989 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546005 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546022 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546038 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546055 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546071 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546088 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546104 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546121 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546137 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546154 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546170 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546187 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546203 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546220 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546236 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546253 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546269 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546286 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546302 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546319 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546335 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546352 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546368 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546385 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546401 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546418 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546434 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546451 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546467 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546484 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546500 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546517 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546533 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546550 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546566 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546583 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546599 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546616 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546632 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546649 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546665 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546682 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546698 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546715 was not found when attempting to remove it
+
+(sublime_text:6236): GLib-CRITICAL **: Source ID 546731 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 1001 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 1019 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 1035 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 1052 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 1068 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 1085 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 1101 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 1118 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 1134 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 1151 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 3514 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 5168 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 5359 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 5379 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 5516 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105032 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105040 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105061 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105077 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105094 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105110 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105127 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105143 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105160 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105176 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105193 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105209 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105226 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105242 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105259 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105275 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105292 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105308 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105325 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105341 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105358 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105374 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105391 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105407 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105424 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105453 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105470 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105486 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105503 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105519 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105536 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105552 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105569 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105585 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105602 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 105625 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 106147 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 107608 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 111083 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 111099 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 111116 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 111972 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 113029 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 113081 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 113386 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 113403 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 117813 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 119088 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 119274 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 119403 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 119855 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 121030 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 123289 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 128699 was not found when attempting to remove it
+
+(sublime_text:2615): GLib-CRITICAL **: Source ID 129959 was not found when attempting to remove it

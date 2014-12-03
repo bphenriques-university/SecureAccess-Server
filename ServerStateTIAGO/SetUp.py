@@ -12,6 +12,7 @@ CURRENT_DIR = "./"
 USER_DIR_NAME = "sirs_users"
 ALLOWED_SITES_FILE = "/allowed_sites"
 SYM_KEY_FILE = "/key"
+PRIORITY_FILE = "/priority"
 
 def printTitle(text):
 	subprocess.call("clear", shell=True)
@@ -83,7 +84,7 @@ def choose_devices():
 	if response > 0 and response <= len(lines):
 		return lines[response-1][BEGIN_MAC:END_MAC]
 
-def generate_show_key(user_dir):
+def generate_KEK(user_dir):
 	key = generate_key()
 	#print "This is the key (in base64): ", base64.b64encode(key)
 	qrcode_image = user_dir + "/qrcode.png"
@@ -94,6 +95,32 @@ def generate_show_key(user_dir):
 	key_file = open(user_dir + SYM_KEY_FILE, "w+")
 	key_file.write(key)
 	key_file.close()
+	return key
+
+def show_key(key):
+	question = "Your key (in base64) is: " + base64.b64encode(key) +". Continue?"
+	options = [
+		"Yes"
+	]
+	big_title =  "YOUR KEY"
+	response = menu_response(question, options, title=big_title)
+
+def prioridade_user(user_dir):
+	question = "Choose priority:"
+	options = [
+		"Low",
+		"Medium",
+		"High"
+	]
+	big_title =  "PRIORITY"
+	response = menu_response(question, options, title=big_title)
+	priority = None
+	priority = response
+	# 3 = HIGH, 2 = MEDIUM, 1 = LOW
+
+	priority_file = open(user_dir + PRIORITY_FILE, "w+")
+	priority_file.write(str(priority))
+	priority_file.close()
 
 def create_allowed_sites_file(user_dir):
 	open(user_dir + ALLOWED_SITES_FILE, 'a').close()
@@ -116,7 +143,11 @@ def setup():
 	makedirs_p(user_dir)
 	#default_user = USER_DIR_NAME + "/default_user"
 	#makedirs_p(default_user)
-	generate_show_key(user_dir)
+
+	#dar oportunidade de para o setup
+	prioridade_user(user_dir)
+	key = generate_KEK(user_dir)
+	show_key(key)
 	create_allowed_sites_file(user_dir)
 	show_allowed_sites_instructions(user_dir)
 

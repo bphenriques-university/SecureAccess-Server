@@ -7,6 +7,7 @@ from bluetooth import *
 from thread import *
 from SessionState import *
 import SquidUpdater
+from operator import itemgetter
 
 NUMBER_ALLOWED_CLIENTS = 4
 DEFAULT_USER = "default_user"
@@ -36,22 +37,28 @@ class ServerApplication():
 			key_file = open(path_MAC + SetUp.SYM_KEY_FILE, 'r')
 			key_francis = key_file.readline()
 			print "[TIAGO]", key_francis
+
+			priority_file = open(path_MAC + SetUp.PRIORITY_FILE, 'r')
+			priority = int(priority_file.readline())
+			print "[TIAGO]", priority
 			# esta key_francis esta' em base64
-			client_session = Session(self, client_id, client_info, key_francis, conn)
+			client_session = Session(self, client_id, client_info, key_francis, priority, conn)
 			client_session.start()
 		else:
 			print "User Inexistente"
 	
-	def newAuthenticatedUser(self, client_id, client_info):
+	def newAuthenticatedUser(self, client_id, client_info, priority):
 		self._list_mutex.acquire()
 		print "Adding authenticated user [" + str(client_id) + "]: " + str(client_info)
-		self._current_users_logged_in.append((client_id, client_info))
+		self._current_users_logged_in.append((client_id, client_info, priority))
+		self._current_users_logged_in = sorted(self._current_users_logged_in, key=itemgetter(2,0), reverse=True)
+		print self._current_users_logged_in
 		self._recheck_user = True
 		self._list_mutex.release()
 
-	def disconnectUser(self, client_id, client_info):
+	def disconnectUser(self, client_id, client_info, priority):
 		self._list_mutex.acquire()
-		self._current_users_logged_in.remove((client_id, client_info))
+		self._current_users_logged_in.remove((client_id, client_info, priority))
 		self._recheck_user = True
 		self._list_mutex.release()
 
@@ -77,14 +84,15 @@ class ServerApplication():
 				SquidUpdater.changeUsr(DEFAULT_USER)
 			else:	
 				print_once = True
-				current_user = self._current_users_logged_in[0]
+				current_user = self._get_next_user()
 				SquidUpdater.changeUsr(current_user[1][0])
 				print "Changing privacy to: " + str(current_user)
 		
 			self._recheck_user = False
 			self._list_mutex.release()
 					
-			
+	def _get_next_user(self):
+		return self._current_users_logged_in[0]
 
 
 	def _create_service(self, uuid, server_name):
