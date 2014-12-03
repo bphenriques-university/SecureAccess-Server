@@ -1,5 +1,5 @@
 #!/usr/bin/python
-from subprocess import call
+import subprocess
 
 def changeUsr(path_allowed_sites):
 
@@ -16,11 +16,15 @@ def changeUsr(path_allowed_sites):
 
     for line in lines:
         if(line.startswith('acl allowed_sites')):
-            file_w.write('acl allowed_sites dstdom_regex -i "/home/tiago/Documents/GitRepos/SecureAccess-Server/ServerStateTIAGO/sirs_users/'+str(path_allowed_sites)+'/allowed_sites"\n')
+            file_w.write('acl allowed_sites dstdom_regex -i "/etc/squid3/sirs_users/'+str(path_allowed_sites)+'/allowed_sites"\n')
         else:
             file_w.write(line)
 
-    call(['squid3', '-k', 'reconfigure'])
+    subprocess.call(['squid3', '-k', 'reconfigure'])
+    subprocess.call(['killall', 'firefox'])
+    #call(['firefox', '>', '/dev/null', '2>&1'])
+    firefox = "firefox > /dev/null 2>&1"
+    ps = subprocess.Popen(firefox, shell=True, stdout=subprocess.PIPE)
     file.close()
     file_w.close()
 

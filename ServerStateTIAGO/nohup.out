@@ -1,0 +1,12 @@
+
+(process:4134): GLib-CRITICAL **: g_slice_set_config: assertion 'sys_page_size == 0' failed
+
+(firefox:4134): GLib-GObject-WARNING **: Attempt to add property GnomeProgram::sm-connect after class was initialised
+
+(firefox:4134): GLib-GObject-WARNING **: Attempt to add property GnomeProgram::show-crash-dialog after class was initialised
+
+(firefox:4134): GLib-GObject-WARNING **: Attempt to add property GnomeProgram::display after class was initialised
+
+(firefox:4134): GLib-GObject-WARNING **: Attempt to add property GnomeProgram::default-icon after class was initialised
+console.error: 
+  Message: Unix error 13 during operation open on file /home/francisco/.mozilla/firefox/mwad0hks.default/sessionstore-backups/recovery.js (Permission denied)
