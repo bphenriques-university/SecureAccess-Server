@@ -24,6 +24,7 @@ def changeUsr(path_allowed_sites):
     squid = "squid3 -k reconfigure > /dev/null 2>&1"
     ps = subprocess.Popen(squid, shell=True, stdout=subprocess.PIPE)
     #subprocess.call(['killall', 'firefox'])
+    
     killall = "killall firefox"
     ps = subprocess.Popen(killall, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     
@@ -32,6 +33,7 @@ def changeUsr(path_allowed_sites):
         #call(['firefox', '>', '/dev/null', '2>&1'])
         firefox = "firefox > /dev/null 2>&1"
         ps = subprocess.Popen(firefox, shell=True, stdout=subprocess.PIPE)
+    
     file.close()
     file_w.close()
 
