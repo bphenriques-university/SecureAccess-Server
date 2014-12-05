@@ -25,15 +25,18 @@ def changeUsr(path_allowed_sites):
     ps = subprocess.Popen(squid, shell=True, stdout=subprocess.PIPE)
     #subprocess.call(['killall', 'firefox'])
     
-    killall = "killall firefox"
-    ps = subprocess.Popen(killall, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    check_firefox = "ps -lA | grep firefox"
+    ps = subprocess.Popen(check_firefox, shell=True, stdout=subprocess.PIPE)
+    response = ps.communicate()
+    #print response
     
     # se o firefox estiver aberto faz restart
-    if ps.communicate()[1] == "":
-        #call(['firefox', '>', '/dev/null', '2>&1'])
-        firefox = "firefox > /dev/null 2>&1"
-        ps = subprocess.Popen(firefox, shell=True, stdout=subprocess.PIPE)
-    
+    if response[0] != "":
+        restart_squid = "service squid3 restart"
+        ps = subprocess.Popen(restart_squid, shell=True, stdout=subprocess.PIPE)
+        ps.communicate()
+        print "SQUID RESTART"
+
     file.close()
     file_w.close()
 

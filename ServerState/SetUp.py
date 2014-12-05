@@ -90,6 +90,7 @@ def choose_devices():
 	printTitle("SCANNING, PLEASE WAIT...")
 	scan_command = "hcitool scan | grep -E '([[:xdigit:]]{1,2}:){5}[[:xdigit:]]{1,2}' | sed 's/\t/ /g'"
 	ps = subprocess.Popen(scan_command, shell=True, stdout=subprocess.PIPE)
+	#ps.communicate()
 
 	lines = []
 	for line in iter(ps.stdout.readline, ''):
@@ -108,6 +109,7 @@ def generate_KEK(user_dir):
 	qrcode_image = user_dir + "/qrcode.png"
 	qr_gen_command = "qrencode -s 20 -o " + qrcode_image +" '"+base64.b64encode(key)+"'"
 	ps = subprocess.Popen(qr_gen_command, shell=True)
+	ps.communicate()
 	qr_gen_display = "eog " + qrcode_image + " > /dev/null 2>&1"
 	ps = subprocess.Popen(qr_gen_display, shell=True, stdout=subprocess.PIPE)
 	key_file = open(user_dir + SYM_KEY_FILE, "w+")
@@ -168,8 +170,8 @@ def setup():
 	#dar oportunidade de para o setup
 	prioridade_user(user_dir)
 	key = generate_KEK(user_dir)
-	show_key(key)
 	create_allowed_sites_file(user_dir)
+	show_key(key)
 	show_allowed_sites_instructions(user_dir)
 
 	options = [
@@ -181,11 +183,11 @@ def setup():
 	else:
 		main()
 
-def remove_user():
-	device_MAC = choose_devices()
-	user_dir = USER_DIR_NAME + "/" + device_MAC
-	rmdir(user_dir)
-	main()
+# def remove_user():
+# 	device_MAC = choose_devices()
+# 	user_dir = USER_DIR_NAME + "/" + device_MAC
+# 	rmdir(user_dir)
+# 	main()
 
 # Execute Function #
 def execute():
@@ -198,7 +200,7 @@ def main():
 	question = "What do you want to do?"
 	options = [
 		"Set Up - New User",
-		"Remove User",
+		#"Remove User",
 		"Run Server"
 	]
 	big_title =  "SIRS PROJECT 2014 - GROUP 8 - MEIC-A"
@@ -206,8 +208,8 @@ def main():
 	
 	if response == 1:
 		setup()
-	elif response == 2:
-		remove_user()
+	# elif response == 2:
+	# 	remove_user()
 	else:
 	    execute()
 

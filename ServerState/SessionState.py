@@ -115,7 +115,7 @@ class StartState(AbstractSessionState):
 		challenge_client = randint(0, 2147483647)
 
 		#temp print
-		response = encrypt("CONN_RESPONSE#" + base64.b64encode(key) + "#" + str(self.__challenge-1) + "#" + str(challenge_client), session_manager.getKekKey())
+		response = encrypt("CONN_R#" + base64.b64encode(key) + "#" + str(self.__challenge-1) + "#" + str(challenge_client), session_manager.getKekKey())
 		session_manager.log("[SERVER]: " + str(response))		
 		c_socket.send(response)
 
@@ -139,7 +139,7 @@ class EchoReplyState(AbstractSessionState):
 	def __init__(self):
 		AbstractSessionState.__init__(self)
 		self.__TIMER_SECONDS = 5
-		self.__AM_ALIVE_MSG = "I_AM_ALIVE"
+		self.__AM_ALIVE_MSG = "ALIV"
 		self.__challenge = None
 
 	def parse_ping_response(self, data):

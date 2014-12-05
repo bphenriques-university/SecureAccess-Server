@@ -58,7 +58,9 @@ class ServerApplication():
 
 	def disconnectUser(self, client_id, client_info, priority):
 		self._list_mutex.acquire()
-		self._current_users_logged_in.remove((client_id, client_info, priority))
+		el =  (client_id, client_info, priority)
+		if el in self._current_users_logged_in: 
+			self._current_users_logged_in.remove(el)
 		self._recheck_user = True
 		self._list_mutex.release()
 
@@ -87,7 +89,7 @@ class ServerApplication():
 				print_once = True
 				current_user = self._get_next_user()
 				#if the allowed user does not change
-				if current_user[0] == previous_user[0]:
+				if current_user[0] != previous_user[0]:
 					SquidUpdater.changeUsr(current_user[1][0])
 				previous_user = current_user
 				print "Changing privacy to: " + str(current_user)
