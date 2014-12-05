@@ -96,13 +96,16 @@ def choose_devices():
 	for line in iter(ps.stdout.readline, ''):
 		# rstrip was adding a space at the begining so [1:] is taking it away
 		lines.append(line.rstrip()[1:])
+	lines.append("Go To Menu")
 
 	response = menu_response("Choose your device:", lines, "Set Up")
 
 	# em principio este if nao e' necessario ja que
 	# a funcao acima verifica os limites
-	if response > 0 and response <= len(lines):
+	if response > 0 and response <= len(lines)-1:
 		return lines[response-1][BEGIN_MAC:END_MAC]
+	else:
+		main()
 
 def generate_KEK(user_dir):
 	key = generate_key()
